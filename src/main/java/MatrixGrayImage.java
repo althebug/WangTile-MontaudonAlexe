@@ -19,7 +19,7 @@ public class MatrixGrayImage implements GrayImage {
 
         // TODO : Changer le code pour retourner la bonne couleur de gris.
 
-        return new ByteGrayColor(ByteGrayColor.MAXIMUM_GRAY_VALUE);
+        return new ByteGrayColor(ByteGrayColor.MAXIMUM_GRAY_LEVEL);
     }
 
     @Override
@@ -34,7 +34,7 @@ public class MatrixGrayImage implements GrayImage {
 
         // TODO : Changer le code pour retourner le bon niveau de gris.
 
-        return ByteGrayColor.MAXIMUM_GRAY_VALUE;
+        return ByteGrayColor.MAXIMUM_GRAY_LEVEL;
     }
 
     @Override
@@ -106,7 +106,7 @@ public class MatrixGrayImage implements GrayImage {
             printWriter.println("# CREATOR: TP3 Version 1.0");
             printWriter.printf("%d %d\n",this.width, this.height);
 
-            printWriter.println(ByteGrayColor.MAXIMUM_GRAY_VALUE);
+            printWriter.println(pixels[0][0].getMaximumGrayLevel());
 
             for(int y = 0; y < height; y++){
                 for(int x = 0; x < width; x++) {

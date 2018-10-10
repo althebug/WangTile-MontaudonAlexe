@@ -6,8 +6,14 @@ import javafx.scene.paint.Color;
 
 public class ByteGrayColor implements GrayColor {
     private int grayLevel;
-    public static final int MAXIMUM_GRAY_VALUE = 255;
-    public static final int MINIMUM_GRAY_VALUE = 0;
+    public static final int MAXIMUM_GRAY_LEVEL = 255;
+
+    @Override
+    public int getMaximumGrayLevel() {
+        return MAXIMUM_GRAY_LEVEL;
+    }
+
+    public static final int MINIMUM_GRAY_LEVEL = 0;
     private static final int OPACITY = 1;
 
     public int getGrayLevel() {
@@ -25,9 +31,9 @@ public class ByteGrayColor implements GrayColor {
 
     @Override
     public Color getColor(){
-        return new Color(grayLevel/(double) MAXIMUM_GRAY_VALUE,
-                grayLevel/(double) MAXIMUM_GRAY_VALUE,
-                grayLevel/(double) MAXIMUM_GRAY_VALUE,
+        return new Color(grayLevel/(double) MAXIMUM_GRAY_LEVEL,
+                grayLevel/(double) MAXIMUM_GRAY_LEVEL,
+                grayLevel/(double) MAXIMUM_GRAY_LEVEL,
                 OPACITY);
     }
 

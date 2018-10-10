@@ -7,5 +7,6 @@ import javafx.scene.paint.Color;
 public interface GrayColor extends Comparable<GrayColor> {
     int getGrayLevel();
     void setGrayLevel(int grayLevel);
+    int getMaximumGrayLevel();
     Color getColor();
 }
