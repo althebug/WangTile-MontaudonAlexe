@@ -5,6 +5,6 @@ import javafx.scene.paint.Color;
  * Interface correspondant à une couleur de gris.
  */
 public interface GrayColor extends Comparable<GrayColor> {
-    int getGrayLevel();
+    double getLuminosity();
     Color getColor();
 }

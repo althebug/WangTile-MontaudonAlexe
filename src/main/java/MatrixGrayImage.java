@@ -16,12 +16,12 @@ public class MatrixGrayImage implements GrayImage {
 
 
     @Override
-    public void setPixel(GrayColor grayLevel, int x, int y) {
+    public void setPixel(GrayColor gray, int x, int y) {
         // TODO : Compléter la méthode pour modifier le pixel.
     }
 
     @Override
-    public GrayColor getPixel(int x, int y) {
+    public GrayColor getPixelGrayColor(int x, int y) {
         // TODO : Changer les instructions pour retourner le bon pixel.
         return new ByteGrayColor();
     }
@@ -34,7 +34,7 @@ public class MatrixGrayImage implements GrayImage {
 
     @Override
     public int getWidth() {
-        // TODO : Changer les isntructions pour retourner la largeur de l'image.
+        // TODO : Changer les instructions pour retourner la largeur de l'image.
         return 600;
     }
 
@@ -45,8 +45,8 @@ public class MatrixGrayImage implements GrayImage {
     }
 
     public MatrixGrayImage(int width, int height){
-        /* TODO : Changer les instructions pour initialiser correctement
-            les attributs de l'instance.
+        /* TODO : Modifier les instructions pour initialiser correctement
+            les propriétés de l'instance.
          */
         this.width = 0;
         this.height = 0;
@@ -87,11 +87,11 @@ public class MatrixGrayImage implements GrayImage {
             printWriter.println("# CREATOR: TP3 Version 1.0");
             printWriter.printf("%d %d\n",this.width, this.height);
 
-            printWriter.println(pixels[0][0].getGrayLevel());
+            printWriter.println(pgmCodeOfGrayColor(pixels[0][0]));
 
             for(int y = 0; y < height; y++){
                 for(int x = 0; x < width; x++) {
-                    printWriter.println(getPixel(x,y).getGrayLevel());
+                    printWriter.println(pgmCodeOfGrayColor(getPixelGrayColor(x,y)));
                 }
             }
             printWriter.close();
@@ -99,5 +99,11 @@ public class MatrixGrayImage implements GrayImage {
         catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    private static final int PGM_MAXIMUM_CODE = 255;
+
+    private int pgmCodeOfGrayColor(GrayColor pixelGrayColor) {
+        return (int) (pixelGrayColor.getLuminosity() * (double) PGM_MAXIMUM_CODE);
     }
 }
