@@ -14,70 +14,50 @@ public class MatrixGrayImage implements GrayImage {
     private final int width;
     private final int height;
 
+
     @Override
-    public GrayColor getPixelGrayColor(int x, int y) {
-
-        // TODO : Changer le code pour retourner la bonne couleur de gris.
-
-        return new ByteGrayColor(ByteGrayColor.MAXIMUM_GRAY_LEVEL);
+    public void setPixel(GrayColor grayLevel, int x, int y) {
+        // TODO : Compléter la méthode pour modifier le pixel.
     }
 
     @Override
-    public void setGrayLevel(int graylevel, int x, int y) {
-
-        // TODO : Changer le code pour mettre à jour la couleur.
-
-    }
-
-    @Override
-    public int getGrayLevel(int x, int y) {
-
-        // TODO : Changer le code pour retourner le bon niveau de gris.
-
-        return ByteGrayColor.MAXIMUM_GRAY_LEVEL;
+    public GrayColor getPixel(int x, int y) {
+        // TODO : Changer les instructions pour retourner le bon pixel.
+        return new ByteGrayColor();
     }
 
     @Override
     public Color getPixelColor(int x, int y) {
-
-        // TODO : Changer le code pour retourner la bonne couleur.
-
+        // TODO : Changer les instructions pour retourner la couleur du pixel.
         return Color.WHITE;
     }
 
     @Override
     public int getWidth() {
-        // TODO : Changer le code pour retourner la bonne largeur.
-
+        // TODO : Changer les isntructions pour retourner la largeur de l'image.
         return 600;
     }
 
     @Override
     public int getHeight() {
-        // TODO : Changer le code pour retourner la bonne hauteur.
-
+        // TODO : Changer les instructions pour retourner la hauteur de l'image.
         return 400;
     }
 
     public MatrixGrayImage(int width, int height){
-        /* TODO : Changer le code pour initialiser correctement les attributs de l'instance.
+        /* TODO : Changer les instructions pour initialiser correctement
+            les attributs de l'instance.
          */
-        this.width=0;
-        this.height=0;
-        this.pixels=null;
+        this.width = 0;
+        this.height = 0;
+        this.pixels = null;
     }
 
 
     public static MatrixGrayImage createImageFromPGMFile(String fileName) {
+        // NE PAS MODIFIER !
         InputStream file = ClassLoader.getSystemResourceAsStream(fileName);
-        Scanner scan = null;
-        try {
-            scan = new Scanner(file);
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
-
+        Scanner scan = new Scanner(file);
         scan.nextLine();
         scan.nextLine();
 
@@ -90,7 +70,8 @@ public class MatrixGrayImage implements GrayImage {
 
         for(int y = 0; y < height; y++){
             for(int x = 0; x < width; x++) {
-                result.setGrayLevel(scan.nextInt(), x, y);
+                GrayColor color = new ByteGrayColor(scan.nextInt());
+                result.setPixel(color, x, y);
             }
         }
 
@@ -98,7 +79,7 @@ public class MatrixGrayImage implements GrayImage {
     }
 
     public void writeIntoPGMFormat(String fileName){
-
+        // NE PAS MODIFIER !
         try {
             FileWriter fileWriter = new FileWriter(fileName);
             PrintWriter printWriter = new PrintWriter(fileWriter);
@@ -106,11 +87,11 @@ public class MatrixGrayImage implements GrayImage {
             printWriter.println("# CREATOR: TP3 Version 1.0");
             printWriter.printf("%d %d\n",this.width, this.height);
 
-            printWriter.println(pixels[0][0].getMaximumGrayLevel());
+            printWriter.println(pixels[0][0].getGrayLevel());
 
             for(int y = 0; y < height; y++){
                 for(int x = 0; x < width; x++) {
-                    printWriter.println(getGrayLevel(x,y));
+                    printWriter.println(getPixel(x,y).getGrayLevel());
                 }
             }
             printWriter.close();
