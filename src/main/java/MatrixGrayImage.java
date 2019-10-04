@@ -10,7 +10,7 @@ import java.util.Scanner;
  */
 public class MatrixGrayImage implements GrayImage {
 
-    private final ByteGrayColor[][] pixels;
+    private final GrayColor[][] pixels;
     private final int width;
     private final int height;
 
