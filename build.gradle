@@ -4,20 +4,20 @@ plugins {
 }
 
 javafx {
-    version = "11"
+    version = "13"
     modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
-sourceCompatibility = "11"
-targetCompatibility = "11"
+sourceCompatibility = "13"
+targetCompatibility = "13"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:6.6.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
 }
 
 repositories {
