@@ -16,8 +16,8 @@ class MatrixGrayImageTest {
 
     @Test
     void getHeight() {
-        assertThat(new MatrixGrayImage(0,0).getWidth(), is(equalTo(0)));
-        assertThat(new MatrixGrayImage(10,20).getWidth(), is(equalTo(20)));
-        assertThat(new MatrixGrayImage(400,300).getWidth(), is(equalTo(300)));
+        assertThat(new MatrixGrayImage(0,0).getHeight(), is(equalTo(0)));
+        assertThat(new MatrixGrayImage(10,20).getHeight(), is(equalTo(20)));
+        assertThat(new MatrixGrayImage(400,300).getHeight(), is(equalTo(300)));
     }
 }
