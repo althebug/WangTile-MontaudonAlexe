@@ -1,20 +1,22 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+
 
 class MatrixGrayImageTest {
 
     @Test
     void getWidth() {
-        assertEquals(0, new MatrixGrayImage(0,0).getWidth());
-        assertEquals(10, new MatrixGrayImage(10,20).getWidth());
-        assertEquals(400, new MatrixGrayImage(400,300).getWidth());
+        assertThat(new MatrixGrayImage(0,0).getWidth(), is(equalTo(0)));
+        assertThat(new MatrixGrayImage(10,20).getWidth(), is(equalTo(10)));
+        assertThat(new MatrixGrayImage(400,300).getWidth(), is(equalTo(400)));
     }
 
     @Test
     void getHeight() {
-        assertEquals(0, new MatrixGrayImage(0,0).getHeight());
-        assertEquals(20, new MatrixGrayImage(10,20).getHeight());
-        assertEquals(300, new MatrixGrayImage(400,300).getHeight());
+        assertThat(new MatrixGrayImage(0,0).getWidth(), is(equalTo(0)));
+        assertThat(new MatrixGrayImage(10,20).getWidth(), is(equalTo(20)));
+        assertThat(new MatrixGrayImage(400,300).getWidth(), is(equalTo(300)));
     }
 }
