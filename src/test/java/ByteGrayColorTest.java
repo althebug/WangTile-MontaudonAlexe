@@ -22,33 +22,39 @@ public class ByteGrayColorTest {
   @Test
   public void testCompareTo_whenColorsCreatedWithGrayLevel(){
     ByteGrayColor color1 = new ByteGrayColor(100);
-    ByteGrayColor color2 = new ByteGrayColor(100);
-    ByteGrayColor color3 = new ByteGrayColor(150);
+    ByteGrayColor color2 = new ByteGrayColor(150);
+    ByteGrayColor color3 = new ByteGrayColor(200);
+    ByteGrayColor sameGrayLevelAsColor1 = new ByteGrayColor(100);
+    assertThat(color1.compareTo(color2)).isNegative();
+    assertThat(color2.compareTo(color3)).isNegative();
     assertThat(color1.compareTo(color3)).isNegative();
-    assertThat(color3.compareTo(color1)).isPositive();
-    assertThat(color1.compareTo(color3)).isEqualTo(-(color3.compareTo(color1)));
-    assertThat(color1.compareTo(color2)).isZero();
+    assertThat(color2.compareTo(color1)).isPositive();
+    assertThat(color1.compareTo(sameGrayLevelAsColor1)).isZero();
+    assertThat(color1.compareTo(color2)).isEqualTo(sameGrayLevelAsColor1.compareTo(color2));
   }
 
   @Test
   public void testCompareTo_whenColorsCreatedWithLuminosity(){
     ByteGrayColor color1 = new ByteGrayColor(0.20);
-    ByteGrayColor color2 = new ByteGrayColor(0.20);
-    ByteGrayColor color3 = new ByteGrayColor(0.60);
+    ByteGrayColor color2 = new ByteGrayColor(0.60);
+    ByteGrayColor color3 = new ByteGrayColor(0.80);
+    ByteGrayColor sameLuminosityAsColor1 = new ByteGrayColor(0.20);
+    assertThat(color1.compareTo(color2)).isNegative();
+    assertThat(color2.compareTo(color3)).isNegative();
     assertThat(color1.compareTo(color3)).isNegative();
-    assertThat(color3.compareTo(color1)).isPositive();
-    assertThat(color1.compareTo(color3)).isEqualTo(-(color3.compareTo(color1)));
-    assertThat(color1.compareTo(color2)).isZero();
+    assertThat(color2.compareTo(color1)).isPositive();
+    assertThat(color1.compareTo(sameLuminosityAsColor1)).isZero();
+    assertThat(color1.compareTo(color2)).isEqualTo(sameLuminosityAsColor1.compareTo(color2));
   }
 
   @Test
   public void testCompareTo_whenColorsCreatedWithLuminosityAndGrayLevel(){
     ByteGrayColor color1 = new ByteGrayColor(0.);
-    ByteGrayColor color2 = new ByteGrayColor(0);
-    ByteGrayColor color3 = new ByteGrayColor(100);
+    ByteGrayColor color2 = new ByteGrayColor(150);
+    ByteGrayColor color3 = new ByteGrayColor(1.);
+    assertThat(color1.compareTo(color2)).isNegative();
+    assertThat(color2.compareTo(color3)).isNegative();
     assertThat(color1.compareTo(color3)).isNegative();
-    assertThat(color3.compareTo(color1)).isPositive();
-    assertThat(color1.compareTo(color3)).isEqualTo(-(color3.compareTo(color1)));
-    assertThat(color1.compareTo(color2)).isZero();
+    assertThat(color2.compareTo(color1)).isPositive();
   }
 }
