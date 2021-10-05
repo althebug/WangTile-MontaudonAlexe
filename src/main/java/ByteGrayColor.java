@@ -10,7 +10,14 @@ public class ByteGrayColor implements GrayColor {
     private static final int MAXIMUM_GRAY_LEVEL = 255;
     private static final int OPACITY = 1;
 
+    // TODO : rajouter constantes publique BLACK et WHITE
+
     private final int grayLevel;
+
+
+    public ByteGrayColor(){
+       this.grayLevel = MINIMUM_GRAY_LEVEL;
+    }
 
     public ByteGrayColor(int grayLevel) {
         // TODO : Corriger l'initialisation de la propriété grayLevel de l'instance.
