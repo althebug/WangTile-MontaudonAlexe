@@ -12,11 +12,6 @@ public class ByteGrayColor implements GrayColor {
 
     private final int grayLevel;
 
-
-    public ByteGrayColor(){
-       this.grayLevel = MINIMUM_GRAY_LEVEL;
-    }
-
     public ByteGrayColor(int grayLevel) {
         // TODO : Corriger l'initialisation de la propriété grayLevel de l'instance.
         this.grayLevel = 0;
