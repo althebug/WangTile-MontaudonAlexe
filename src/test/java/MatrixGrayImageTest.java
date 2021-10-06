@@ -1,23 +1,32 @@
 import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
-
+import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class MatrixGrayImageTest {
 
     @Test
-    void getWidth() {
-        assertThat(new MatrixGrayImage(0,0).getWidth(), is(equalTo(0)));
-        assertThat(new MatrixGrayImage(10,20).getWidth(), is(equalTo(10)));
-        assertThat(new MatrixGrayImage(400,300).getWidth(), is(equalTo(400)));
+    void testGetWidth() {
+        assertThat(new MatrixGrayImage(0,0).getWidth()).isEqualTo(0);
+        assertThat(new MatrixGrayImage(10,20).getWidth()).isEqualTo(10);
+        assertThat(new MatrixGrayImage(400,300).getWidth()).isEqualTo(400);
     }
 
     @Test
-    void getHeight() {
-        assertThat(new MatrixGrayImage(0,0).getHeight(), is(equalTo(0)));
-        assertThat(new MatrixGrayImage(10,20).getHeight(), is(equalTo(20)));
-        assertThat(new MatrixGrayImage(400,300).getHeight(), is(equalTo(300)));
+    void testGetHeight() {
+        assertThat(new MatrixGrayImage(0,0).getHeight()).isEqualTo(0);
+        assertThat(new MatrixGrayImage(10,20).getHeight()).isEqualTo(20);
+        assertThat(new MatrixGrayImage(400,300).getHeight()).isEqualTo(300);
+    }
+
+    @Test
+    void testGetPixel_whenPixelHasBeenSet() {
+        GrayColor grey1 = new ByteGrayColor(0.2);
+        GrayColor grey2 = new ByteGrayColor(0.8);
+        MatrixGrayImage image = new MatrixGrayImage(10, 10);
+        image.setPixel(grey1, 1, 1);
+        assertThat(image.getPixelGrayColor(1,1)).isEqualTo(grey1);
+        image.setPixel(grey2, 3, 9);
+        assertThat(image.getPixelGrayColor(3,9)).isEqualTo(grey2);
     }
 }
