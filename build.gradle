@@ -15,7 +15,7 @@ repositories {
 dependencies {
     testImplementation('org.junit.jupiter:junit-jupiter-api:5.8.1',
             'org.assertj:assertj-core:3.21.0')
-    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.8.1')
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
 
 test {
@@ -23,5 +23,5 @@ test {
 }
 
 application {
-    mainClassName = "Main"
+    mainClassName = "main.MainApp"
 }
