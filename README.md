@@ -1,8 +1,8 @@
-# Image
+# Tuiles de Wang
 
 ## Description du projet
 
-Ce projet est l'occasion de travailler sur la représentation et la manipulation d'images. Ces images seront constituées de pixels caractérisés par une couleur représentant un niveau de gris.
+Ce sujet est construit sur l'idée de réaliser des pavages du plan, à l'aide d'objets simples nommés des tuiles de Wang. Il s'agit de tuiles carrées divisées en quatre triangles. Chaque triangle est associé à un côté du carré, et coloré d'une couleur particulière.
 
 ## Membres du projet
 

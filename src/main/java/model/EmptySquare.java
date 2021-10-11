@@ -3,9 +3,9 @@ package model;
 import java.util.List;
 
 public class EmptySquare implements Square{
-  public static final Square EMPTY_SQUARE= new EmptySquare();
+  public static final Square EMPTY_SQUARE = new EmptySquare();
 
-  private EmptySquare(){}
+  private EmptySquare() {}
 
   @Override
   public boolean accept(Tile tile) {
@@ -36,5 +36,5 @@ public class EmptySquare implements Square{
   }
 
   @Override
-  public void setNeighbor(Square neighbor, CardinalDirection direction) {                                                           }
+  public void setNeighbor(Square neighbor, CardinalDirection direction) {}
 }

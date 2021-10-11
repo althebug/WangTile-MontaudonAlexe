@@ -17,7 +17,13 @@
                 <Menu mnemonicParsing="false" text="Uniform Tiles">
                         <MenuItem mnemonicParsing="false" onAction="#updateEmptyUniformTile" text="Empty">
                         </MenuItem>
-                        <MenuItem mnemonicParsing="false" onAction="#updateRedUniformTile" text="Red">
+                        <MenuItem mnemonicParsing="false" onAction="#updateFirstNameOneUniformTile" text="Firstname 1">
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#updateLastNameOneUniformTile" text="Lastname 1">
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#updateFirstNameTwoUniformTile" text="Firstname 2">
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#updateLastNameTwoUniformTile" text="Lastname 2">
                         </MenuItem>
                         <MenuItem mnemonicParsing="false" onAction="#updateRandomColorUniformTile" text="Random color">
                         </MenuItem>
