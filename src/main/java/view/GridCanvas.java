@@ -8,7 +8,7 @@ import model.*;
 
 import java.util.List;
 
-public class GridTileCanvas extends Canvas {
+public class GridCanvas extends Canvas {
 
   public final double tileWidth;
   private final double tileHeight;
@@ -17,16 +17,17 @@ public class GridTileCanvas extends Canvas {
   private final Grid grid;
   private final GraphicsContext graphicsContext;
 
-  public GridTileCanvas(@NamedArg("tileWidth") Double tileWidth,
-                        @NamedArg("tileHeight") Double tileHeight,
-                        @NamedArg("numberOfColumns") Integer numberOfColumns,
-                        @NamedArg("numberOfRows") Integer numberOfRows) {
+  public GridCanvas(@NamedArg("tileWidth") Double tileWidth,
+                    @NamedArg("tileHeight") Double tileHeight,
+                    @NamedArg("numberOfColumns") Integer numberOfColumns,
+                    @NamedArg("numberOfRows") Integer numberOfRows) {
     this.tileWidth = tileWidth;
     this.tileHeight = tileHeight;
     this.numberOfColumns = numberOfColumns;
     this.numberOfRows = numberOfRows;
     this.setWidth(tileWidth * numberOfColumns);
     this.setHeight(tileHeight * numberOfRows);
+    // TODO change the EmptyGrid for an ArrayGrid
     grid = new EmptyGrid(numberOfRows, numberOfColumns);
     graphicsContext = getGraphicsContext2D();
   }

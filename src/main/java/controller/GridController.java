@@ -2,9 +2,8 @@ package controller;
 import javafx.fxml.FXML;
 import javafx.scene.paint.Color;
 import model.*;
-import view.GridTileCanvas;
+import view.GridCanvas;
 
-import java.util.List;
 import java.util.Random;
 
 public class GridController {
@@ -14,18 +13,18 @@ public class GridController {
   public static final Color COLOR_LAST_NAME_TWO = Color.YELLOW;
   Random random = new Random();
   @FXML
-  public GridTileCanvas gridTileCanvas;
+  public GridCanvas gridCanvas;
 
   public void initialize() {
     clearGrid();
   }
 
   public void fillGrid(TileGenerator tileGenerator) {
-    gridTileCanvas.fillGrid(tileGenerator);
+    gridCanvas.fillGrid(tileGenerator);
   }
 
   public void drawGrid() {
-    gridTileCanvas.update();
+    gridCanvas.update();
   }
 
   public void clearGrid(){
@@ -46,25 +45,25 @@ public class GridController {
   @FXML
   public void updateFirstNameOneUniformTile(){
     // TODO : uncomment the code to test UniformTileGenerator
-    // updateGrid(new UniformTileGenerator(new InternalSide(COLOR_FIRST_NAME_ONE)));
+    // updateGrid(new UniformTileGenerator(COLOR_FIRST_NAME_ONE));
   }
 
   @FXML
   public void updateFirstNameTwoUniformTile() {
     // TODO : uncomment the code to test UniformTileGenerator
-    // updateGrid(new UniformTileGenerator(new InternalSide(COLOR_FIRST_NAME_TWO)));
+    // updateGrid(new UniformTileGenerator(COLOR_FIRST_NAME_TWO));
   }
 
   @FXML
   public void updateLastNameOneUniformTile(){
     // TODO : uncomment the code to test UniformTileGenerator
-    // updateGrid(new UniformTileGenerator(new InternalSide(COLOR_LAST_NAME_ONE)));
+    // updateGrid(new UniformTileGenerator(COLOR_LAST_NAME_ONE));
   }
 
   @FXML
   public void updateLastNameTwoUniformTile() {
     // TODO : uncomment the code to test UniformTileGenerator
-    // updateGrid(new UniformTileGenerator(new InternalSide(COLOR_LAST_NAME_TWO)));
+    // updateGrid(new UniformTileGenerator(COLOR_LAST_NAME_TWO));
   }
 
   @FXML

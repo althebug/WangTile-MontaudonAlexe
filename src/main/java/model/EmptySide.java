@@ -10,16 +10,6 @@ public class EmptySide implements Side {
   private EmptySide(){}
 
   @Override
-  public boolean accept(Side side) {
-    return true;
-  }
-
-  @Override
-  public List<Side> compatibleSides(List<Side> sides) {
-    return sides;
-  }
-
-  @Override
   public Color color() {
     return Color.WHITE;
   }
