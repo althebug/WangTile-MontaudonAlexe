@@ -29,19 +29,4 @@ public class EmptyGrid implements Grid{
   @Override
   public void fill(TileGenerator tileGenerator) {
   }
-
-  @Override
-  public Iterator<Square> iterator() {
-    return new Iterator<>() {
-      @Override
-      public boolean hasNext() {
-        return false;
-      }
-
-      @Override
-      public Square next() {
-        return EmptySquare.EMPTY_SQUARE;
-      }
-    };
-  }
 }

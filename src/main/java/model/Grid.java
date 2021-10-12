@@ -1,6 +1,6 @@
 package model;
 
-public interface Grid extends Iterable<Square>{
+public interface Grid{
   Square getSquare(int rowIndex, int columnIndex);
   int getNumberOfRows();
   int getNumberOfColumns();
