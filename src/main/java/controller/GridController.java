@@ -4,6 +4,7 @@ import javafx.scene.paint.Color;
 import model.*;
 import view.GridCanvas;
 
+import java.util.List;
 import java.util.Random;
 
 public class GridController {
@@ -101,14 +102,14 @@ public class GridController {
     // TODO : uncomment the code to test RandomTileSetGenerator
 /*
     updateGrid(new RandomTileSetGenerator(List.of(
-            new WangTile(new Side[]{new InternalSide(COLOR_LAST_NAME_ONE), new InternalSide(COLOR_FIRST_NAME_ONE), new InternalSide(COLOR_FIRST_NAME_ONE), new InternalSide(COLOR_FIRST_NAME_ONE)}),
-            new WangTile(new Side[]{new InternalSide(COLOR_LAST_NAME_TWO), new InternalSide(COLOR_FIRST_NAME_ONE), new InternalSide(COLOR_FIRST_NAME_ONE), new InternalSide(COLOR_FIRST_NAME_ONE)}),
-            new WangTile(new Side[]{new InternalSide(COLOR_LAST_NAME_ONE), new InternalSide(COLOR_FIRST_NAME_ONE), new InternalSide(COLOR_LAST_NAME_ONE), new InternalSide(COLOR_FIRST_NAME_TWO)}),
-            new WangTile(new Side[]{new InternalSide(COLOR_LAST_NAME_TWO), new InternalSide(COLOR_FIRST_NAME_ONE), new InternalSide(COLOR_LAST_NAME_ONE), new InternalSide(COLOR_FIRST_NAME_TWO)}),
-            new WangTile(new Side[]{new InternalSide(COLOR_FIRST_NAME_ONE), new InternalSide(COLOR_FIRST_NAME_TWO), new InternalSide(COLOR_LAST_NAME_TWO), new InternalSide(COLOR_FIRST_NAME_ONE)}),
-            new WangTile(new Side[]{new InternalSide(COLOR_FIRST_NAME_TWO), new InternalSide(COLOR_FIRST_NAME_TWO), new InternalSide(COLOR_LAST_NAME_TWO), new InternalSide(COLOR_FIRST_NAME_ONE)}),
-            new WangTile(new Side[]{new InternalSide(COLOR_FIRST_NAME_ONE), new InternalSide(COLOR_FIRST_NAME_TWO), new InternalSide(COLOR_FIRST_NAME_TWO), new InternalSide(COLOR_FIRST_NAME_TWO)}),
-            new WangTile(new Side[]{new InternalSide(COLOR_FIRST_NAME_TWO), new InternalSide(COLOR_FIRST_NAME_TWO), new InternalSide(COLOR_FIRST_NAME_TWO), new InternalSide(COLOR_FIRST_NAME_TWO)})), random));
+            new WangTile(new Side[]{new ColoredSide(COLOR_LAST_NAME_ONE), new ColoredSide(COLOR_FIRST_NAME_ONE), new ColoredSide(COLOR_FIRST_NAME_ONE), new ColoredSide(COLOR_FIRST_NAME_ONE)}),
+            new WangTile(new Side[]{new ColoredSide(COLOR_LAST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_ONE), new ColoredSide(COLOR_FIRST_NAME_ONE), new ColoredSide(COLOR_FIRST_NAME_ONE)}),
+            new WangTile(new Side[]{new ColoredSide(COLOR_LAST_NAME_ONE), new ColoredSide(COLOR_FIRST_NAME_ONE), new ColoredSide(COLOR_LAST_NAME_ONE), new ColoredSide(COLOR_FIRST_NAME_TWO)}),
+            new WangTile(new Side[]{new ColoredSide(COLOR_LAST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_ONE), new ColoredSide(COLOR_LAST_NAME_ONE), new ColoredSide(COLOR_FIRST_NAME_TWO)}),
+            new WangTile(new Side[]{new ColoredSide(COLOR_FIRST_NAME_ONE), new ColoredSide(COLOR_FIRST_NAME_TWO), new ColoredSide(COLOR_LAST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_ONE)}),
+            new WangTile(new Side[]{new ColoredSide(COLOR_FIRST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_TWO), new ColoredSide(COLOR_LAST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_ONE)}),
+            new WangTile(new Side[]{new ColoredSide(COLOR_FIRST_NAME_ONE), new ColoredSide(COLOR_FIRST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_TWO)}),
+            new WangTile(new Side[]{new ColoredSide(COLOR_FIRST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_TWO)})), random));
 */
   }
 
