@@ -1,4 +1,4 @@
-# Image
+# Tuiles de Wang
 
 ## Description du projet 
 
