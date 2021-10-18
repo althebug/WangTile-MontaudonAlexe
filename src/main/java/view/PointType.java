@@ -20,11 +20,11 @@ public enum PointType {
 
   static public List<PointType> trianglePointTypes(CardinalDirection side){
     return switch (side){
-        case NORTH -> List.of(PointType.NORTH_WEST_CORNER, PointType.NORTH_EAST_CORNER, PointType.CENTER);
-        case EAST -> List.of(PointType.NORTH_EAST_CORNER, PointType.SOUTH_EAST_CORNER, PointType.CENTER);
-        case SOUTH -> List.of(PointType.SOUTH_EAST_CORNER, PointType.SOUTH_WEST_CORNER, PointType.CENTER);
-        case WEST -> List.of(PointType.SOUTH_WEST_CORNER, PointType.NORTH_WEST_CORNER, PointType.CENTER);
-      };
+      case NORTH -> List.of(PointType.NORTH_WEST_CORNER, PointType.NORTH_EAST_CORNER, PointType.CENTER);
+      case EAST -> List.of(PointType.NORTH_EAST_CORNER, PointType.SOUTH_EAST_CORNER, PointType.CENTER);
+      case SOUTH -> List.of(PointType.SOUTH_EAST_CORNER, PointType.SOUTH_WEST_CORNER, PointType.CENTER);
+      case WEST -> List.of(PointType.SOUTH_WEST_CORNER, PointType.NORTH_WEST_CORNER, PointType.CENTER);
+    };
   }
 
   public double getXPosition() {
