@@ -88,7 +88,7 @@ public class GridController {
   @FXML
   public void updateRandomConstrainedWangTile() {
     // TODO : uncomment the code to test RandomConstrainedWangTileGenerator
-    // updateGrid(new RandomConstrainedWangTileGenerator(List.of(COLOR_FIRST_NAME_ONE, COLOR_LAST_NAME_ONE, COLOR_FIRST_NAME_TWO, Color.YELLOW), random));
+    // updateGrid(new RandomConstrainedWangTileGenerator(List.of(COLOR_FIRST_NAME_ONE, COLOR_LAST_NAME_ONE, COLOR_FIRST_NAME_TWO, COLOR_LAST_NAME_TWO), random));
   }
 
   @FXML
