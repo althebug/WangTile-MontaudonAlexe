@@ -27,7 +27,6 @@ public class GridCanvas extends Canvas {
     this.numberOfRows = numberOfRows;
     this.setWidth(tileWidth * numberOfColumns);
     this.setHeight(tileHeight * numberOfRows);
-    // TODO change the EmptyGrid for an ArrayGrid
     grid = new EmptyGrid(numberOfRows, numberOfColumns);
     graphicsContext = getGraphicsContext2D();
   }
@@ -38,7 +37,7 @@ public class GridCanvas extends Canvas {
   }
 
   private void drawGrid(){
-    drawGridTile(grid);
+    draw(grid);
   }
 
   private void clear(){
@@ -49,32 +48,70 @@ public class GridCanvas extends Canvas {
     grid.fill(tileGenerator);
   }
 
-  public void drawGridTile(Grid tileGrid){
+  public void draw(Grid tileGrid){
+    drawSquares(tileGrid);
+    strokeSquares(tileGrid);
+  }
+
+  private void drawSquares(Grid tileGrid) {
     for(int row = 0; row < numberOfRows; row++)
       for(int column = 0; column < numberOfColumns; column++){
-        Tile tile = tileGrid.getSquare(row, column).getTile();
-        drawTile(tile, column * tileWidth, row * tileHeight);
+        Square square = tileGrid.getSquare(row, column);
+        drawSquare(square, column * tileWidth, row * tileHeight);
       }
   }
 
-  private void drawTile(Tile tile, double x, double y) {
-    for(CardinalDirection side: CardinalDirection.values()){
-      drawSideTriangle(tile, x, y, side);
+  private void strokeSquares(Grid tileGrid) {
+    for(int row = 0; row < numberOfRows; row++)
+      for(int column = 0; column < numberOfColumns; column++){
+        Square square = tileGrid.getSquare(row, column);
+        strokeSquare(square, column * tileWidth, row * tileHeight);
+      }
+  }
+
+
+  private void strokeSquare(Square square, double x, double y) {
+    PointType[] cornerTypes = PointType.values();
+    double[] xPoints = new double[cornerTypes.length];
+    double[] yPoints = new double[cornerTypes.length];
+    for(int index = 0; index < cornerTypes.length; index++){
+      xPoints[index] =  x + (cornerTypes[index].getXPosition() * tileWidth);
+      yPoints[index] =  y + (cornerTypes[index].getYPosition() * tileHeight);
+    }
+    final int indexCenter = 4;
+    for(CardinalDirection side : CardinalDirection.values()) {
+      int indexCorner0 = side.ordinal();
+      int indexCorner1 = (indexCorner0+1)%4;
+      strokeSquareSide(square, xPoints[indexCorner0], yPoints[indexCorner0], xPoints[indexCorner1], yPoints[indexCorner1], side);
+      strokeInternalTriangleSide(square, xPoints[indexCorner0],yPoints[indexCorner0],xPoints[indexCenter],yPoints[indexCenter], side);
     }
   }
 
-  private void drawSideTriangle(Tile tile, double x, double y, CardinalDirection side){
+  private void strokeSquareSide(Square square, double x0, double y0, double x1, double y1, CardinalDirection side) {
+    graphicsContext.strokeLine(x0, y0, x1, y1);
+  }
+
+  private void strokeInternalTriangleSide(Square square, double x0, double y0, double x1, double y1, CardinalDirection side) {
+    graphicsContext.strokeLine(x0, y0, x1, y1);
+  }
+
+  private void drawSquare(Square square, double x, double y) {
+    for(CardinalDirection side: CardinalDirection.values()){
+      drawSideTriangle(square, x, y, side);
+    }
+  }
+
+  private void drawSideTriangle(Square square, double x, double y, CardinalDirection side){
+    Color color = square.getTile().side(side).color();
     List<PointType> cornerTypes = PointType.trianglePointTypes(side);
-    double[] xPoints = new double[3];
-    double[] yPoints = new double[3];
-    for(int index = 0; index < 3; index++){
+    int size = PointType.trianglePointTypes(side).size();
+    double[] xPoints = new double[size];
+    double[] yPoints = new double[size];
+    for(int index = 0; index < size; index++){
       xPoints[index] =  x + (cornerTypes.get(index).getXPosition() * tileWidth);
       yPoints[index] =  y + (cornerTypes.get(index).getYPosition() * tileHeight);
     }
-
-    Color color = tile.side(side).color();
     graphicsContext.setFill(color);
-    graphicsContext.strokePolygon(xPoints, yPoints, 3);
-    graphicsContext.fillPolygon(xPoints, yPoints, 3);
+    graphicsContext.fillPolygon(xPoints, yPoints, size);
   }
 }
