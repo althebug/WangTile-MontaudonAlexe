@@ -70,7 +70,7 @@ public class GridController {
   @FXML
   public void updateRandomColorUniformTile(){
     // TODO : uncomment the code to test RandomUniformTileGenerator
-    // updateGrid(new RandomUniformTileGenerator(List.of(COLOR_FIRST_NAME_ONE, COLOR_LAST_NAME_ONE, COLOR_LAST_NAME_TWO), random));
+    updateGrid(new RandomUniformTileGenerator(List.of(COLOR_FIRST_NAME_ONE, COLOR_LAST_NAME_ONE, COLOR_LAST_NAME_TWO), random));
   }
 
   @FXML
@@ -82,7 +82,7 @@ public class GridController {
   @FXML
   public void updateRandomWangTile() {
     // TODO : uncomment the code to test RandomWangTileGenerator
-    // updateGrid(new RandomWangTileGenerator(List.of(COLOR_FIRST_NAME_ONE, COLOR_LAST_NAME_ONE, COLOR_FIRST_NAME_TWO, COLOR_LAST_NAME_TWO), random));
+    updateGrid(new RandomWangTileGenerator(List.of(COLOR_FIRST_NAME_ONE, COLOR_LAST_NAME_ONE, COLOR_FIRST_NAME_TWO, COLOR_LAST_NAME_TWO), random));
   }
 
   @FXML
