@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.Random;
 
 public class GridController {
-  public static final Color COLOR_FIRST_NAME_ONE = Color.RED;
-  public static final Color COLOR_LAST_NAME_ONE = Color.BLUE;
-  public static final Color COLOR_FIRST_NAME_TWO = Color.GREEN;
-  public static final Color COLOR_LAST_NAME_TWO = Color.YELLOW;
+  public static final Color COLOR_FIRST_NAME_ONE = Color.ALICEBLUE;
+  public static final Color COLOR_LAST_NAME_ONE = Color.MAGENTA;
+  public static final Color COLOR_FIRST_NAME_TWO = Color.LAVENDER;
+  public static final Color COLOR_LAST_NAME_TWO = Color.OLDLACE;
   Random random = new Random();
   @FXML
   public GridCanvas gridCanvas;
@@ -46,25 +46,25 @@ public class GridController {
   @FXML
   public void updateFirstNameOneUniformTile(){
     // TODO : uncomment the code to test UniformTileGenerator
-    // updateGrid(new UniformTileGenerator(COLOR_FIRST_NAME_ONE));
+    updateGrid(new UniformTileGenerator(COLOR_FIRST_NAME_ONE));
   }
 
   @FXML
   public void updateFirstNameTwoUniformTile() {
     // TODO : uncomment the code to test UniformTileGenerator
-    // updateGrid(new UniformTileGenerator(COLOR_FIRST_NAME_TWO));
+    updateGrid(new UniformTileGenerator(COLOR_FIRST_NAME_TWO));
   }
 
   @FXML
   public void updateLastNameOneUniformTile(){
     // TODO : uncomment the code to test UniformTileGenerator
-    // updateGrid(new UniformTileGenerator(COLOR_LAST_NAME_ONE));
+    updateGrid(new UniformTileGenerator(COLOR_LAST_NAME_ONE));
   }
 
   @FXML
   public void updateLastNameTwoUniformTile() {
     // TODO : uncomment the code to test UniformTileGenerator
-    // updateGrid(new UniformTileGenerator(COLOR_LAST_NAME_TWO));
+    updateGrid(new UniformTileGenerator(COLOR_LAST_NAME_TWO));
   }
 
   @FXML

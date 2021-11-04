@@ -27,7 +27,7 @@ public class GridCanvas extends Canvas {
     this.numberOfRows = numberOfRows;
     this.setWidth(tileWidth * numberOfColumns);
     this.setHeight(tileHeight * numberOfRows);
-    grid = new EmptyGrid(numberOfRows, numberOfColumns);
+    grid = new ArrayGrid(numberOfRows, numberOfColumns);
     graphicsContext = getGraphicsContext2D();
   }
 
