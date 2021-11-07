@@ -15,3 +15,4 @@ public class EmptyTileTest {
     assertThat(EmptyTile.EMPTY_TILE.side(CardinalDirection.WEST)).isEqualTo(EmptySide.EMPTY_SIDE);
   }
 }
+

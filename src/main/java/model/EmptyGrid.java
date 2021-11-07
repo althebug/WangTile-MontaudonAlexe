@@ -1,8 +1,13 @@
 package model;
 
+import model.EmptySquare;
+import model.EmptySquareGridIterator;
+import model.Square;
+import model.TileGenerator;
+
 import java.util.Iterator;
 
-public class EmptyGrid implements Grid{
+public class EmptyGrid implements Grid {
   private final int numberOfRows;
   private final int numberOfColumns;
 
@@ -28,5 +33,10 @@ public class EmptyGrid implements Grid{
 
   @Override
   public void fill(TileGenerator tileGenerator) {
+  }
+
+  @Override
+  public Iterator<Square> iterator() {
+    return new EmptySquareGridIterator();
   }
 }

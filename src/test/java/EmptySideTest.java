@@ -1,5 +1,3 @@
-package sideTest;
-
 import javafx.scene.paint.Color;
 import model.EmptySide;
 import org.junit.jupiter.api.Test;

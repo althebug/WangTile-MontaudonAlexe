@@ -6,5 +6,5 @@ Ce projet est l'occasion de travailler sur les tuiles de Wang, qui sont une faç
 
 ## Membres du projet
 
-- NOM prénom du premier participant
-- NOM prénom du deuxième participant
+- MONTAUDON Alexe
+

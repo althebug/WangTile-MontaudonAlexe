@@ -13,4 +13,14 @@ public class EmptySide implements Side {
   public Color color() {
     return Color.WHITE;
   }
+
+  @Override
+  public List<Side> compatiblesSides(List<Side> sides) {
+    return sides;
+  }
+
+  @Override
+  public boolean accept(Side side) {
+    return true;
+  }
 }

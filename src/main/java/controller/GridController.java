@@ -76,7 +76,7 @@ public class GridController {
   @FXML
   public void updateRandomTruchetTile(){
     // TODO : uncomment the code to test RandomRotatedTruchetTileGenerator
-    // updateGrid(new RandomRotatedTruchetTileGenerator(COLOR_FIRST_NAME_ONE, COLOR_LAST_NAME_ONE, random));
+    updateGrid(new RandomRotatedTruchetTileGenerator(COLOR_FIRST_NAME_ONE, COLOR_LAST_NAME_ONE, random));
   }
 
   @FXML
@@ -88,19 +88,19 @@ public class GridController {
   @FXML
   public void updateRandomConstrainedWangTile() {
     // TODO : uncomment the code to test RandomConstrainedWangTileGenerator
-    // updateGrid(new RandomConstrainedWangTileGenerator(List.of(COLOR_FIRST_NAME_ONE, COLOR_LAST_NAME_ONE, COLOR_FIRST_NAME_TWO, COLOR_LAST_NAME_TWO), random));
+    updateGrid(new RandomConstrainedWangTileGenerator(List.of(COLOR_FIRST_NAME_ONE, COLOR_LAST_NAME_ONE, COLOR_FIRST_NAME_TWO, COLOR_LAST_NAME_TWO), random));
   }
 
   @FXML
   public void updateConstrainedTruchetTile() {
     // TODO : uncomment the code to test ConstrainedRotatedTruchetTileGenerator
-    // updateGrid(new ConstrainedRotatedTruchetTileGenerator(COLOR_FIRST_NAME_ONE, COLOR_LAST_NAME_ONE, random));
+    updateGrid(new ConstrainedRotatedTruchetTileGenerator(COLOR_FIRST_NAME_ONE, COLOR_LAST_NAME_ONE, random));
   }
 
   @FXML
   public void updateRandomWangTileSet() {
     // TODO : uncomment the code to test RandomTileSetGenerator
-/*
+
     updateGrid(new RandomTileSetGenerator(List.of(
             new WangTile(new Side[]{new ColoredSide(COLOR_LAST_NAME_ONE), new ColoredSide(COLOR_FIRST_NAME_ONE), new ColoredSide(COLOR_FIRST_NAME_ONE), new ColoredSide(COLOR_FIRST_NAME_ONE)}),
             new WangTile(new Side[]{new ColoredSide(COLOR_LAST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_ONE), new ColoredSide(COLOR_FIRST_NAME_ONE), new ColoredSide(COLOR_FIRST_NAME_ONE)}),
@@ -110,7 +110,7 @@ public class GridController {
             new WangTile(new Side[]{new ColoredSide(COLOR_FIRST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_TWO), new ColoredSide(COLOR_LAST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_ONE)}),
             new WangTile(new Side[]{new ColoredSide(COLOR_FIRST_NAME_ONE), new ColoredSide(COLOR_FIRST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_TWO)}),
             new WangTile(new Side[]{new ColoredSide(COLOR_FIRST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_TWO), new ColoredSide(COLOR_FIRST_NAME_TWO)})), random));
-*/
+
   }
 
 
